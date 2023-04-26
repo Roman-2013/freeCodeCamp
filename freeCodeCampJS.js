@@ -308,3 +308,87 @@ function checkObj(obj, checkProp) {
   // Only change code above this line
 }
 console.log(checkObj({gift: "pony", pet: "kitten", bed: "sleigh"}, "pet"))
+
+// Доступ к вложенным массивам
+const myPlants = [
+  {
+    type: "flowers",
+    list: [
+
+
+      "rose",
+      "tulip",
+      "dandelion"
+    ]
+  },
+  {
+    type: "trees",
+    list: [
+      "fir",
+      "pine",
+      "birch"
+    ]
+  }
+];
+const secondTree = myPlants[1].list[1];
+
+//Коллекция записей
+
+// Setup
+const recordCollection = {
+  2548: {
+    albumTitle: 'Slippery When Wet',
+    artist: 'Bon Jovi',
+    tracks: ['Let It Rock', 'You Give Love a Bad Name']
+  },
+  2468: {
+    albumTitle: '1999',
+    artist: 'Prince',
+    tracks: ['1999', 'Little Red Corvette']
+  },
+  1245: {
+    artist: 'Robert Palmer',
+    tracks: []
+  },
+  5439: {
+    albumTitle: 'ABBA Gold'
+  }
+};
+
+// Only change code below this line
+function updateRecords(records, id, prop, value) {
+  if (value === "") {
+    delete records[id][prop];
+  } else if (prop !== "tracks" && value !== "") {
+    records[id][prop] = value;
+  } else if (prop === "tracks" && value !== "") {
+    if (records[id].hasOwnProperty("tracks") === false) {
+      records[id][prop] = [];
+    }
+    records[id][prop].push(value);
+  }
+  return records;
+}
+
+updateRecords(recordCollection, 5439, 'artist', 'ABBA');
+
+// Итерация с циклами while JavaScript
+// Setup
+const myArray = [];
+let i=5;
+
+while(i>-1){
+myArray.push(i)
+i--;
+}
+// Only change code below this line
+console.log(myArray)
+
+//Итерация с JavaScript для циклов
+// Setup
+const myArray = [];
+for(let i=1;i<6;i++){
+  myArray.push(i);
+}
+// Only change code below this line
+console.log(myArray)
