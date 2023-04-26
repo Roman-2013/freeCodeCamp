@@ -245,7 +245,7 @@ switch(val){
 }
 
 sequentialSizes(1);
-
+ 
 // Замена цепочек If Else на Switch
 
 function chainToSwitch(val) {
@@ -275,3 +275,36 @@ function chainToSwitch(val) {
 }
 
 chainToSwitch(7);
+
+//Подсчет карт
+let count = 0;
+function cc(card) {
+  // Only change code below this line
+if(card==2 || card==3 || card==4 || card==5 || card==6){
+  count++
+}else if(card==10 || card=="J" || card=="Q" || card=="K" || card=="A"){
+  count--
+}
+var b="";
+  if(count>0){
+    b="Bet";
+  }else{
+    b="Hold";
+  }
+  return count +" "+ b;
+  // Only change code above this line
+}
+cc(2); cc(3); cc(7); cc('K'); cc('A');
+
+// Проверка объектов на свойства
+function checkObj(obj, checkProp) {
+  // Only change code below this line
+  if(obj.hasOwnProperty(checkProp)){
+    return obj[checkProp];
+  }else {
+    return "Not Found"
+  }
+ 
+  // Only change code above this line
+}
+console.log(checkObj({gift: "pony", pet: "kitten", bed: "sleigh"}, "pet"))
