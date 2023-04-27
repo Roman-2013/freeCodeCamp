@@ -392,3 +392,123 @@ for(let i=1;i<6;i++){
 }
 // Only change code below this line
 console.log(myArray)
+
+//Перебор нечетных чисел с помощью цикла for
+// Setup
+const myArray = [];
+for(let a=1;a<10;a+=2){
+  myArray.push(a);
+}
+
+// Считать в обратном порядке с помощью цикла for
+
+const myArray = [];
+for(let a=9;a>0;a-=2){
+  myArray.push(a);
+}
+
+//Перебор массива с помощью цикла for
+const myArr = [2, 3, 4, 5, 6];
+let total=0;
+for(let i=0;i<myArr.length;i++){
+  total+=myArr[i];
+}
+
+
+//Вложение циклов
+function multiplyAll(arr) {
+  let product = 1;
+
+for(let i=0;i<arr.length;i++){
+  for(let x=0;x<arr[i].length;x++){
+    product*=arr[i][x];
+  }
+}
+ 
+  return product;
+}
+multiplyAll([[1, 2], [3, 4], [5, 6, 7]]);
+
+
+//Итерация с помощью JavaScript Do...While Loops
+
+const myArray = [];
+let i = 10;
+
+do{
+myArray.push(i);
+  i++;
+}while (i < 5) 
+
+//Замена циклов с помощью рекурсии
+function sum(arr, n) {
+  if(n<=0){
+    return 0;
+ }else{
+    return sum(arr,n-1)+arr[n-1];
+  }
+}
+
+//Поиск профиля
+const contacts = [
+  {
+    firstName: "Akira",
+    lastName: "Laine",
+    number: "0543236543",
+    likes: ["Pizza", "Coding", "Brownie Points"],
+  },
+  {
+    firstName: "Harry",
+    lastName: "Potter",
+    number: "0994372684",
+    likes: ["Hogwarts", "Magic", "Hagrid"],
+  },
+  {
+    firstName: "Sherlock",
+    lastName: "Holmes",
+    number: "0487345643",
+    likes: ["Intriguing Cases", "Violin"],
+  },
+  {
+    firstName: "Kristian",
+    lastName: "Vos",
+    number: "unknown",
+    likes: ["JavaScript", "Gaming", "Foxes"],
+  },
+];
+
+function lookUpProfile(name, prop) {
+  for (let i=0;i<contacts.length;i++){
+    if (contacts[i].firstName == name){
+ return contacts[i][prop] || "No such property";
+    }
+  }
+  return "No such contact";
+}
+
+
+let data =lookUpProfile("Akira", "address");
+ console.log(data);
+
+ //Генерировать случайные целые числа в диапазоне
+ function randomRange(myMin, myMax) {
+  return Math.floor(Math.random()*(myMax-myMin+1))+myMin;
+}
+console.log(randomRange(8,10));
+
+
+//Используйте условный (тернарный) оператор
+function checkEqual(a, b) {
+return a==b?"Equal":"Not Equal";
+}
+
+checkEqual(1, 2);
+
+//Используйте несколько условных (тернарных) операторов
+function checkSign(num) {
+return num>0?"positive"
+:num<0?"negative"
+:"zero"
+}
+
+checkSign(10);
