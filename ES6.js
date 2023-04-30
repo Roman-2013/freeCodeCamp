@@ -20,3 +20,40 @@ const myConcat = (arr1, arr2) => {
 };
 
 console.log(myConcat([1, 2], [3, 4, 5]));
+
+//Установите параметры по умолчанию для ваших функций
+const increment = (number, value=1) => number + value;
+
+// Используйте параметр Rest с параметрами функции
+const sum = (...args) => {
+  let total = 0;
+  for (let i = 0; i < args.length; i++) {
+    total += args[i];
+  }
+  return total;
+}
+
+//Используйте оператор Spread для оценки массивов на месте
+const arr1 = ['JAN', 'FEB', 'MAR', 'APR', 'MAY'];
+let arr2;
+
+arr2 = [...arr1]; 
+
+console.log(arr2);
+
+//Используйте присваивание деструктурирования для извлечения значений из объектов
+const HIGH_TEMPERATURES = {
+  yesterday: 75,
+  today: 77,
+  tomorrow: 80
+};
+const{today,tomorrow}=HIGH_TEMPERATURES;
+
+//Используйте назначение деструктурирования для назначения переменных из объектов
+const HIGH_TEMPERATURES = {
+  yesterday: 75,
+  today: 77,
+  tomorrow: 80
+};
+
+const{today: highToday, tomorrow: highTomorrow}=HIGH_TEMPERATURES
