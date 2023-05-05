@@ -79,3 +79,11 @@ function makeList(arr) {
 const failuresList = makeList(result.failure);
 
 console.log(failuresList);
+
+//Напишите краткие литеральные объявления объекта, используя сокращенную запись свойства объекта
+
+const createPerson = (name, age, gender) => 
+  // Only change code below this line
+ ({ name,age,gender});
+  // Only change code above this line
+
