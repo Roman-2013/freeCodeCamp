@@ -75,3 +75,57 @@ function repeatStringNumTimes(str, num) {
   return rezult
 }
 repeatStringNumTimes("abc", 3);
+
+//8
+function truncateString(str, num) {
+  let stre=''
+  let rezult=str.slice(0,num);
+  if(num>=str.length){
+   return str
+  }
+  stre=rezult+'...'
+  console.log(stre)
+  return stre
+ // return str;
+}
+truncateString("A-tisket a-tasket A green and yellow basket",8);
+
+//9
+function findElement(arr, func) {
+   let num = 0;
+  for(let a=0;a<arr.length;a++){
+ if( func(arr[a])==true){
+   return arr[a]
+ }
+}
+}
+findElement([1, 3, 5, 8, 9, 10], num => num % 2 === 0);
+
+//10
+function booWho(bool) {
+  if(bool===true||bool===false){
+    return true
+  }else{
+return false;
+  }
+}
+booWho(null);
+
+//11
+function titleCase(str) {
+  return str
+  .toLowerCase()
+  .replace(/(^|\s)\S/g, L => L.toUpperCase());
+}
+titleCase("I'm a little tea pot");
+
+//12
+function frankenSplice(arr1, arr2, n) {
+  // It's alive. It's alive!
+  let localArray = arr2.slice();
+  for (let i = 0; i < arr1.length; i++) {
+    localArray.splice(n, 0, arr1[i]);
+    n++;
+  }
+  return localArray;
+}
